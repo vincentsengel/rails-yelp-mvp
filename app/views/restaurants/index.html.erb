@@ -1,0 +1,15 @@
+<h1>Bonjour, bienvenue</h1>
+<h3><%= link_to 'Ajoutez votre restaurant préféré !', new_restaurant_path , class:"btn btn-primary"%></h3>
+<h3>Voici nos restaurants :</h3>
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+    <span>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
+    </span>
+    <span>
+      ( <%= restaurant.category %> )
+    </span>
+    </li>
+  <% end %>
+</ul>
